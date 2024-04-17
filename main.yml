@@ -14,6 +14,6 @@ jobs:
         server: esoft.now-tify.com
         username: ${{ secrets.FTPUSERNAME }}
         password: ${{ secrets.FTPPASSWORD }}
-        protocol: ftps
+        protocol: ftp
         port: 2121
         server-dir: public_html/
