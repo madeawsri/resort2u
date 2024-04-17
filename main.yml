@@ -1,0 +1,19 @@
+on: push
+name: 🚀 Deploy resort2u on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: resort2u
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/resort2u
+    
+    - name: 📂 Sync files
+      uses: resort2u/FTP-Deploy-Action@v4.3.4
+      with:
+        server: esoft.now-tify.com
+        username: ${{ secrets.FTPUSERNAME }}
+        password: ${{ secrets.FTPPASSWORD }}
+        protocol: ftps
+        port: 2121
+        server-dir: public_html/
